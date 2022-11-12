@@ -1,0 +1,23 @@
+# book_project
+<div>
+    <button class="btn btn-danger" (click)="onLoad()">Load</button>
+</div>
+<div class="page-header">
+    <div class="list-group">
+        <div *ngFor="bookList; let idx=index;">
+            <button type="button" class="btn btn-secondary"> #:
+                <span class="badge badge-secondary" [innerText]="idx+1"></span>
+            </button>
+            <div>
+                <h3>Book Name: {{item.bookName}}</h3>
+                <h5>author {{item.author }} </h5>
+                <h5>publishDate: {{item.publishDate}}</h5>
+                 <h5>Original Price: {{item.price|currency:'INR':'symbol'}}</h5>
+                 <div *ngIf="books">
+                    stock : available;
+                 </div>
+                 <h5>Discount : {{item.discount}}</h5>
+                 <hr/>
+        </div>
+    </div>
+</div>
